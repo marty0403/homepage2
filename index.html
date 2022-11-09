@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA=Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,
+    initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <style>
+     body {
+         background: black;
+         height: 6000px;
+         font-family: 'nanumsquare';
+     }
+     div {
+         margin-top: 1000px;
+         color: white;
+         text-align: center;
+         opacity: 0;
+         transform: rotate(-720deg);
+         transition: all 0.5s;
+     }
+ </style>
+
+<div><h1>안녕하세요</h1></div>
+<div><h2>저는 마티임</h2></div>
+<div><h3>할줄알거나 배우는 언어</h3></div>
+<div><img src="py.png"></div>
+ 
+<script>
+
+    let observer = new IntersectionObserver((e)=>{
+      e.forEach((ㅁㄴㅇㄹ)=>{
+          if (ㅁㄴㅇㄹ.isIntersecting){
+              ㅁㄴㅇㄹ.target.style.opacity = 1;
+              ㅁㄴㅇㄹ.target.style.transform = 'rotate(0deg)';
+          }else  {
+           ㅁㄴㅇㄹ.target.style.opacity= 0;
+          }
+      })
+    })
+
+    let div= document.querySelectorAll('div')
+    observer.observe(div[0])
+    observer.observe(div[1])
+    observer.observe(div[2])
+    observer.observe(div[3])
+
+</script>
+
+
+
+</body>
+</html>
